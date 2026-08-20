@@ -1,10 +1,16 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sidebar.jsx';
+import HomePage from './pages/HomePage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import SignupPage from './pages/SignupPage.jsx';
+import ExplorePage from './pages/ExplorePage.jsx';
+import LikesPage from './pages/LikesPage.jsx';
+
 const App = () => {
   return (
-    <div className="flex">
+    <div className="flex text-white">
       <Sidebar />
-      <div>
+      <div className="max-w-5xl mx-auto my-5 text-white  transition-all duration-300 flex-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />}></Route>
