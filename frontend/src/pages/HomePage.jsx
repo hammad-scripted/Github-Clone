@@ -38,7 +38,7 @@ const HomePage = () => {
       <Search />
       <SortRepos  onSort={setSortType} sortType={sortType}  />
       <div className=" flex gap-4 flex-col lg:flex-row  justify-center items-start">
-        <ProfileInfo />
+        <ProfileInfo  userProfile={userProfile} />
         <Repos alwaysFullWidth repos={repos} />
       </div>
     </div>
