@@ -5,7 +5,7 @@ import LoginPage from './pages/LoginPage.jsx';
 import SignupPage from './pages/SignupPage.jsx';
 import ExplorePage from './pages/ExplorePage.jsx';
 import LikesPage from './pages/LikesPage.jsx';
-
+import { Toaster } from 'react-hot-toast';
 const App = () => {
   return (
     <div className="flex text-white">
@@ -18,6 +18,7 @@ const App = () => {
           <Route path="/explore" element={<ExplorePage />}></Route>
           <Route path="/likes" element={<LikesPage />} />
         </Routes>
+        <Toaster />
       </div>
     </div>
   );

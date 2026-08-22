@@ -5,6 +5,7 @@ const SortRepos = ({ onSort, sortType }) => {
 		{ type: "forks", text: "Most Forks" },
 	];
 
+
 	return (
 		<div className='mb-2 flex justify-center lg:justify-end'>
 			{BUTTONS.map((button) => (
