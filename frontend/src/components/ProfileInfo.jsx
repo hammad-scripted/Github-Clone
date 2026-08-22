@@ -89,7 +89,7 @@ const ProfileInfo = ({userProfile}) => {
         {/* Member Since Date */}
         <div className="my-2">
           <p className="text-gray-600 font-bold text-sm">Member since</p>
-          <p className="">{memberSince}</p>
+          <p className="">{formatMemberSince(memberSince)}</p>
         </div>
 
         {/* Email Address */}

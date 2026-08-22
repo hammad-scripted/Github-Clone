@@ -5,6 +5,7 @@ import Search from '../components/Search';
 import SortRepos from '../components/SortRepos';
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
+import Spinner from '../components/Spinner';
 const HomePage = () => {
   const [userProfile, setUserProfile] = React.useState({});
   const [repos, setRepos] = React.useState([]);
@@ -36,10 +37,16 @@ const HomePage = () => {
   return (
     <div className="m-4">
       <Search />
-      <SortRepos  onSort={setSortType} sortType={sortType}  />
+      <SortRepos onSort={setSortType} sortType={sortType} />
       <div className=" flex gap-4 flex-col lg:flex-row  justify-center items-start">
-        <ProfileInfo  userProfile={userProfile} />
-        <Repos alwaysFullWidth repos={repos} />
+        {userProfile && !loading && <ProfileInfo userProfile={userProfile} />}
+        {repos.length > 0 && !loading && <Repos repos={repos} />}
+        {repos.length === 0 && !loading && (
+          <p className="flex items-center justify-center h-32 ">
+            No repos found
+          </p>
+        )}
+        {loading && <Spinner />}
       </div>
     </div>
   );
